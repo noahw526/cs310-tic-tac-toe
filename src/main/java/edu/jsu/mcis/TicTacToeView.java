@@ -29,9 +29,11 @@ public class TicTacToeView {
         } else {
             System.out.println("Player 2 (O) Move: ");
         }
-        System.out.print("Please the row and column numbers, separated by a space: ");
+
+        System.out.print("Enter the row and column number(s), separated by a space : ");
         row = keyboard.nextInt();
-        column = keyboard.nextInt();
+        column = keyboard.nextInt(); 
+
 
         if ((row >= 0 && column >= 0) && (row <= 2 && column <= 2)){
             TicTacToeMove ticTacToeMove = new TicTacToeMove(row, column);
@@ -65,4 +67,6 @@ public class TicTacToeView {
     }
 	
 }
+
+
 
