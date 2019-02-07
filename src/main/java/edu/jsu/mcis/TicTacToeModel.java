@@ -76,7 +76,7 @@ public class TicTacToeModel {
         /* Initialize board by filling every square with empty marks */
         
         /* Initialize board by filling every square with empty marks */
-        
+
         for (int i = 0; i < width; i++){
             for (int j = 0; j < width; j++){
                 board[i][j] = Mark.EMPTY;
@@ -93,36 +93,29 @@ public class TicTacToeModel {
            toggle "xTurn" from true to false (or vice-versa) to switch to the
            other player before returning TRUE.  Otherwise, return FALSE. */
         
-        //Worked on 1/28 beleive it is finished
-        if (isValidSquare(row, col)){
-            if (!isSquareMarked(row, col)) {
-                if (xTurn) {
-                    board[row][col] = Mark.X;
-                }
-                else {
-                    board[row][col] = Mark.O;
-                }
-                xTurn = !xTurn;
-                return true;
-            }
-            else {
-                return false;
-            }
+        if (isValidSquare(row, col) && !isSquareMarked(row, col)) {
+           if (xTurn) {board[row][col] = Mark.X; }
+           else {board[row][col] = Mark.O;}
+           xTurn = !xTurn;
+           return true;
         }
-        else{
-            return false;
-        }
-    }
+        else {return false;}
+        
+        
+        
+}
 	
     private boolean isValidSquare(int row, int col) {
         
         /* Return TRUE if the specified location is within the bounds of the board */
         
-        if ((row >= getWidth() || col >= getWidth()) || (row < 0 || col < 0)){
-            return false;
-        }
-        else {
-            return true;
+           boolean square = false;
+           if((row <0 ||row >=width) || (col< 0 || col>=width)){
+               return false;
+
+           }
+           else{
+               return true;
         }
         
     }
